@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Feria Virtual | Margarita Web Design</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+--bg:#fffaf8;
+--card:#ffffff;
+--primary:#d7b2ab;
+--secondary:#f4dfda;
+--text:#2e2e2e;
+--light:#777777;
+--border:#eee3df;
+--shadow:0 10px 40px rgba(0,0,0,0.05);
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+padding:28px 0;
+position:fixed;
+width:100%;
+top:0;
+left:0;
+z-index:999;
+backdrop-filter:blur(12px);
+background:rgba(255,250,248,0.75);
+border-bottom:1px solid rgba(0,0,0,0.04);
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:18px;
+font-weight:700;
+letter-spacing:-0.5px;
+color:var(--text);
+}
+
+.logo span{
+color:var(--primary);
+}
+
+.nav-btn{
+background:var(--text);
+color:white;
+padding:12px 22px;
+border-radius:14px;
+font-size:14px;
+font-weight:600;
+transition:.3s;
+}
+
+.nav-btn:hover{
+transform:translateY(-2px);
+opacity:.9;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding-top:120px;
+position:relative;
+}
+
+.blur{
+position:absolute;
+width:350px;
+height:350px;
+background:var(--secondary);
+filter:blur(100px);
+border-radius:50%;
+z-index:-1;
+opacity:.7;
+}
+
+.blur.one{
+top:80px;
+left:-80px;
+}
+
+.blur.two{
+bottom:0;
+right:-80px;
+}
+
+.hero-content{
+max-width:900px;
+text-align:center;
+}
+
+.tag{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:12px 18px;
+background:white;
+border:1px solid var(--border);
+border-radius:100px;
+font-size:14px;
+font-weight:500;
+margin-bottom:28px;
+box-shadow:var(--shadow);
+}
+
+.hero h1{
+font-size:78px;
+line-height:1;
+letter-spacing:-4px;
+margin-bottom:28px;
+font-weight:700;
+}
+
+.hero h1 span{
+color:var(--primary);
+}
+
+.hero p{
+font-size:20px;
+line-height:1.8;
+max-width:760px;
+margin:auto;
+color:var(--light);
+margin-bottom:42px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.primary-btn{
+background:var(--text);
+color:white;
+padding:18px 30px;
+border-radius:18px;
+font-weight:600;
+transition:.3s;
+}
+
+.primary-btn:hover{
+transform:translateY(-3px);
+}
+
+.secondary-btn{
+background:white;
+border:1px solid var(--border);
+padding:18px 30px;
+border-radius:18px;
+font-weight:600;
+color:var(--text);
+transition:.3s;
+}
+
+.secondary-btn:hover{
+transform:translateY(-3px);
+}
+
+section{
+padding:120px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title h2{
+font-size:54px;
+letter-spacing:-2px;
+margin-bottom:14px;
+}
+
+.section-title p{
+font-size:18px;
+color:var(--light);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
+}
+
+.card{
+background:var(--card);
+padding:34px;
+border-radius:28px;
+border:1px solid var(--border);
+transition:.35s;
+box-shadow:var(--shadow);
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card-icon{
+font-size:36px;
+margin-bottom:22px;
+}
+
+.card h3{
+font-size:24px;
+margin-bottom:12px;
+}
+
+.card p{
+line-height:1.8;
+color:var(--light);
+}
+
+.price-box{
+background:white;
+border-radius:40px;
+padding:70px 40px;
+text-align:center;
+border:1px solid var(--border);
+box-shadow:var(--shadow);
+max-width:850px;
+margin:auto;
+}
+
+.price-tag{
+font-size:84px;
+font-weight:700;
+letter-spacing:-4px;
+margin:25px 0;
+}
+
+.price-tag span{
+font-size:24px;
+font-weight:500;
+color:var(--light);
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:16px;
+margin-top:45px;
+}
+
+.feature{
+background:var(--bg);
+padding:18px;
+border-radius:18px;
+font-weight:500;
+}
+
+.cta{
+background:linear-gradient(135deg,#e7c6c0,#f6e8e4);
+padding:90px 40px;
+border-radius:42px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.cta h2{
+font-size:58px;
+line-height:1;
+letter-spacing:-3px;
+margin-bottom:24px;
+}
+
+.cta p{
+max-width:700px;
+margin:auto;
+line-height:1.9;
+font-size:18px;
+margin-bottom:38px;
+color:#5e5e5e;
+}
+
+footer{
+padding:40px 20px;
+text-align:center;
+font-size:14px;
+color:#888;
+}
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:52px;
+letter-spacing:-2px;
+}
+
+.section-title h2{
+font-size:40px;
+}
+
+.cta h2{
+font-size:42px;
+}
+
+.price-tag{
+font-size:58px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:42px;
+}
+
+.section-title h2{
+font-size:34px;
+}
+
+.cta h2{
+font-size:34px;
+}
+
+.price-tag{
+font-size:48px;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.primary-btn,
+.secondary-btn{
+width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+Margarita<span>WebDesign</span>
+</div>
+
+<a href="https://wa.me/5492235528850" class="nav-btn" target="_blank">
+Anotarme
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="blur one"></div>
+<div class="blur two"></div>
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="tag">
+✨ Feria Virtual para Emprendedores
+</div>
+
+<h1>
+Mostrá tu <span>marca</span><br>
+de forma profesional
+</h1>
+
+<p>
+Una plataforma moderna creada para emprendedores, marcas y negocios que quieren más visibilidad, clientes y presencia online.
+</p>
+
+<div class="hero-buttons">
+
+<a href="https://wa.me/5492235528850" class="primary-btn" target="_blank">
+QUIERO MI ESPACIO
+</a>
+
+<a href="#planes" class="secondary-btn">
+VER BENEFICIOS
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+¿Qué incluye?
+</h2>
+
+<p>
+Mucho más que aparecer en una web.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="card-icon">
+📱
+</div>
+
+<h3>
+Difusión
+</h3>
+
+<p>
+Tu emprendimiento tendrá visibilidad dentro de la feria y redes sociales.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+🛍️
+</div>
+
+<h3>
+Perfil Personalizado
+</h3>
+
+<p>
+Espacio para mostrar tu marca con Instagram, WhatsApp y catálogo.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+🚀
+</div>
+
+<h3>
+Más Clientes
+</h3>
+
+<p>
+Ayudamos a que más personas descubran y conecten con tu emprendimiento.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+💛
+</div>
+
+<h3>
+Comunidad
+</h3>
+
+<p>
+Una red pensada para apoyarnos y crecer entre emprendedores.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="planes">
+
+<div class="container">
+
+<div class="price-box">
+
+<div class="tag">
+🔥 Precio Lanzamiento
+</div>
+
+<h2>
+Inscripción mensual
+</h2>
+
+<div class="price-tag">
+$12.000
+<span>/ mes</span>
+</div>
+
+<p style="color:#777; line-height:1.8;">
+Valor exclusivo para los primeros emprendimientos.
+Luego el precio aumentará.
+</p>
+
+<div class="features">
+
+<div class="feature">
+✔ Perfil dentro de la feria
+</div>
+
+<div class="feature">
+✔ Botón directo a WhatsApp
+</div>
+
+<div class="feature">
+✔ Link a Instagram
+</div>
+
+<div class="feature">
+✔ Difusión en historias
+</div>
+
+<div class="feature">
+✔ Diseño visual premium
+</div>
+
+<div class="feature">
+✔ Acompañamiento inicial
+</div>
+
+</div>
+
+<div style="margin-top:45px;">
+
+<a href="https://wa.me/5492235528850" class="primary-btn" target="_blank">
+RESERVAR MI LUGAR
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="cta">
+
+<h2>
+Tu marca merece<br>
+más visibilidad ✨
+</h2>
+
+<p>
+Empezá a mostrar tu emprendimiento de una manera más moderna, visual y profesional junto a otros emprendedores.
+</p>
+
+<a href="https://wa.me/5492235528850" class="primary-btn" target="_blank">
+HABLAR POR WHATSAPP
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Margarita Web Design — Feria Virtual para Emprendedores
+</footer>
+
+</body>
+</html>
