@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Feria Virtual | Margarita Web Design</title>
 
@@ -18,66 +18,67 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
 }
 
-:root{
-
---bg:#ffffff;
---text:#111111;
---light:#6f6f6f;
---gold:#c6a76a;
---soft:#f6f6f6;
---border:#ececec;
---shadow:0 10px 40px rgba(0,0,0,0.05);
-
+html{
+scroll-behavior:smooth;
 }
 
 body{
 font-family:'Inter',sans-serif;
-background:var(--bg);
-color:var(--text);
+background:#ffffff;
+color:#111111;
 overflow-x:hidden;
+}
+
+:root{
+--gold:#c6a46d;
+--light:#777777;
+--soft:#f8f8f8;
+--border:#ececec;
+--shadow:0 10px 35px rgba(0,0,0,0.05);
 }
 
 a{
 text-decoration:none;
 }
 
+img{
+max-width:100%;
+display:block;
+}
+
 .container{
-width:90%;
-max-width:1250px;
+width:92%;
+max-width:1240px;
 margin:auto;
 }
 
-header{
+/* HEADER */
 
+header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:22px 0;
-backdrop-filter:blur(14px);
-background:rgba(255,255,255,0.85);
+background:rgba(255,255,255,0.9);
+backdrop-filter:blur(12px);
 border-bottom:1px solid rgba(0,0,0,0.04);
 z-index:999;
-
 }
 
 nav{
-
 display:flex;
-justify-content:space-between;
 align-items:center;
-
+justify-content:space-between;
+padding:18px 0;
+gap:20px;
 }
 
 .logo{
-
 font-size:20px;
 font-weight:800;
 letter-spacing:-1px;
-
 }
 
 .logo span{
@@ -85,86 +86,73 @@ color:var(--gold);
 }
 
 .nav-btn{
-
-background:var(--text);
+background:#111111;
 color:white;
-padding:14px 24px;
+padding:14px 22px;
 border-radius:16px;
 font-size:14px;
 font-weight:600;
-transition:.3s;
-
+transition:0.3s;
 }
 
 .nav-btn:hover{
-transform:translateY(-3px);
+transform:translateY(-2px);
 }
 
-.hero{
+/* HERO */
 
+.hero{
 min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-padding-top:120px;
+padding:150px 0 90px;
 position:relative;
-
 }
 
 .blur{
-
 position:absolute;
-width:350px;
-height:350px;
+width:320px;
+height:320px;
+background:#f7f0e6;
+filter:blur(90px);
 border-radius:50%;
-background:#f7f1e7;
-filter:blur(100px);
-opacity:.9;
 z-index:-1;
-
 }
 
 .blur.one{
 top:0;
-left:-120px;
+left:-100px;
 }
 
 .blur.two{
 bottom:0;
-right:-120px;
+right:-100px;
 }
 
 .hero-content{
-
-max-width:950px;
+max-width:920px;
 text-align:center;
-
 }
 
 .badge{
-
 display:inline-flex;
-align-items:center;
-gap:10px;
-padding:12px 20px;
+padding:12px 18px;
+border-radius:999px;
 background:white;
 border:1px solid var(--border);
-border-radius:100px;
 font-size:14px;
 font-weight:600;
+margin-bottom:28px;
 box-shadow:var(--shadow);
-margin-bottom:30px;
-
 }
 
 .hero h1{
-
 font-size:88px;
 line-height:0.95;
 letter-spacing:-5px;
 margin-bottom:28px;
 font-weight:800;
-
 }
 
 .hero h1 span{
@@ -172,184 +160,160 @@ color:var(--gold);
 }
 
 .hero p{
-
-font-size:21px;
+font-size:20px;
 line-height:1.8;
 color:var(--light);
-max-width:820px;
+max-width:760px;
 margin:auto;
-margin-bottom:45px;
-
+margin-bottom:42px;
 }
 
 .hero-buttons{
-
 display:flex;
 justify-content:center;
-gap:18px;
+gap:16px;
 flex-wrap:wrap;
+}
 
+.primary-btn,
+.secondary-btn{
+padding:18px 28px;
+border-radius:18px;
+font-weight:600;
+font-size:15px;
+transition:0.3s;
 }
 
 .primary-btn{
-
-background:var(--text);
+background:#111111;
 color:white;
-padding:18px 34px;
-border-radius:18px;
-font-weight:600;
-transition:.3s;
-
-}
-
-.primary-btn:hover{
-transform:translateY(-4px);
 }
 
 .secondary-btn{
-
-background:white;
 border:1px solid var(--border);
-padding:18px 34px;
-border-radius:18px;
-font-weight:600;
-color:var(--text);
-
+background:white;
+color:#111111;
 }
 
+.primary-btn:hover,
+.secondary-btn:hover{
+transform:translateY(-3px);
+}
+
+/* SECTIONS */
+
 section{
-padding:120px 0;
+padding:110px 0;
 }
 
 .section-title{
-
 text-align:center;
-margin-bottom:70px;
-
+margin-bottom:60px;
 }
 
 .section-title h2{
-
-font-size:56px;
+font-size:58px;
 letter-spacing:-3px;
 margin-bottom:14px;
-
 }
 
 .section-title p{
-
 font-size:18px;
 color:var(--light);
-
+line-height:1.8;
+max-width:700px;
+margin:auto;
 }
 
+/* CARDS */
+
 .grid{
-
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:24px;
-
 }
 
 .card{
-
 background:white;
 padding:32px;
 border-radius:30px;
 border:1px solid var(--border);
 box-shadow:var(--shadow);
-transition:.35s;
-
+transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-6px);
 }
 
 .card-icon{
-
 font-size:38px;
-margin-bottom:20px;
-
+margin-bottom:18px;
 }
 
 .card h3{
-
 font-size:24px;
-margin-bottom:14px;
-
+margin-bottom:12px;
 }
 
 .card p{
-
-line-height:1.8;
 color:var(--light);
-
+line-height:1.8;
 }
 
-.price-box{
+/* PRICE */
 
+.price-box{
 background:#111111;
-padding:70px 40px;
+padding:70px 35px;
 border-radius:40px;
 text-align:center;
 color:white;
-
 }
 
 .price{
-
-font-size:88px;
+font-size:84px;
 font-weight:800;
 letter-spacing:-4px;
-margin:20px 0;
 color:var(--gold);
-
+margin:22px 0;
 }
 
 .price span{
-
-font-size:24px;
+font-size:22px;
 font-weight:500;
-color:#cfcfcf;
-
+color:#d8d8d8;
 }
 
 .features{
-
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:16px;
-margin-top:45px;
-
+margin-top:38px;
 }
 
 .feature{
-
 background:rgba(255,255,255,0.06);
 padding:18px;
 border-radius:18px;
-font-weight:500;
-
+font-size:15px;
 }
 
-.business-grid{
+/* BUSINESS */
 
+.business-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:28px;
-
 }
 
 .business-card{
-
 background:white;
 border-radius:30px;
 overflow:hidden;
 border:1px solid var(--border);
 box-shadow:var(--shadow);
-transition:.35s;
-
+transition:0.3s;
 }
 
 .business-card:hover{
@@ -357,76 +321,69 @@ transform:translateY(-8px);
 }
 
 .business-card img{
-
 width:100%;
 height:320px;
 object-fit:cover;
-
 }
 
 .business-content{
-
-padding:30px;
-
+padding:28px;
 }
 
 .business-content h3{
-
 font-size:26px;
 margin-bottom:12px;
-
 }
 
 .business-content p{
-
-line-height:1.8;
 color:var(--light);
-margin-bottom:24px;
-
+line-height:1.8;
+margin-bottom:22px;
 }
 
 .links{
-
 display:flex;
 gap:12px;
 flex-wrap:wrap;
-
 }
 
 .links a{
-
-background:#f7f7f7;
+background:#f6f6f6;
 padding:12px 16px;
 border-radius:14px;
 font-size:14px;
 font-weight:600;
-color:var(--text);
+color:#111111;
+}
 
+/* FORM */
+
+.form-wrapper{
+max-width:850px;
+margin:auto;
 }
 
 .form-box{
-
 background:white;
-padding:60px 35px;
-border-radius:40px;
+padding:45px;
+border-radius:34px;
 border:1px solid var(--border);
 box-shadow:var(--shadow);
-max-width:900px;
-margin:auto;
-
 }
 
-form{
-
+.form-grid{
 display:grid;
+grid-template-columns:1fr 1fr;
 gap:18px;
+}
 
+.full{
+grid-column:1/-1;
 }
 
 input,
 textarea,
 select{
-
 width:100%;
 padding:18px;
 border-radius:18px;
@@ -435,76 +392,98 @@ background:#fafafa;
 font-family:'Inter',sans-serif;
 font-size:15px;
 outline:none;
+transition:0.3s;
+}
 
+input:focus,
+textarea:focus,
+select:focus{
+border-color:var(--gold);
+background:white;
 }
 
 textarea{
-min-height:140px;
+min-height:150px;
 resize:none;
 }
 
-button{
-
-background:var(--text);
-color:white;
-border:none;
+.file-box{
 padding:18px;
-border-radius:18px;
-font-weight:600;
-cursor:pointer;
-font-size:16px;
-
+border:2px dashed #d8d8d8;
+border-radius:20px;
+background:#fafafa;
 }
 
-.cta{
+.submit-btn{
+width:100%;
+background:#111111;
+color:white;
+padding:20px;
+border:none;
+border-radius:18px;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
 
-background:linear-gradient(135deg,#111111,#1c1c1c);
-padding:90px 40px;
-border-radius:45px;
+.submit-btn:hover{
+transform:translateY(-2px);
+}
+
+.note{
+font-size:14px;
+color:var(--light);
+line-height:1.7;
+margin-top:16px;
+text-align:center;
+}
+
+/* CTA */
+
+.cta{
+background:#111111;
+border-radius:42px;
+padding:80px 35px;
 text-align:center;
 color:white;
-
 }
 
 .cta h2{
-
-font-size:60px;
+font-size:58px;
 line-height:1;
 letter-spacing:-3px;
-margin-bottom:24px;
-
+margin-bottom:22px;
 }
 
 .cta p{
-
 max-width:760px;
 margin:auto;
+color:#d0d0d0;
 line-height:1.9;
 font-size:18px;
-margin-bottom:38px;
-color:#cfcfcf;
-
+margin-bottom:36px;
 }
 
-footer{
+/* FOOTER */
 
+footer{
 padding:40px 20px;
 text-align:center;
 font-size:14px;
-color:#888;
-
+color:#888888;
 }
+
+/* RESPONSIVE */
 
 @media(max-width:900px){
 
 .hero h1{
 font-size:58px;
+letter-spacing:-3px;
 }
 
-.section-title h2{
-font-size:42px;
-}
-
+.section-title h2,
 .cta h2{
 font-size:42px;
 }
@@ -513,12 +492,29 @@ font-size:42px;
 font-size:58px;
 }
 
+.form-grid{
+grid-template-columns:1fr;
+}
+
 }
 
 @media(max-width:600px){
 
+nav{
+flex-direction:column;
+}
+
+.hero{
+padding-top:180px;
+}
+
 .hero h1{
-font-size:44px;
+font-size:42px;
+line-height:1;
+}
+
+.hero p{
+font-size:17px;
 }
 
 .hero-buttons{
@@ -528,18 +524,24 @@ flex-direction:column;
 .primary-btn,
 .secondary-btn{
 width:100%;
+text-align:center;
 }
 
-.section-title h2{
-font-size:34px;
-}
-
+.section-title h2,
 .cta h2{
 font-size:34px;
 }
 
 .price{
-font-size:48px;
+font-size:46px;
+}
+
+.form-box{
+padding:26px;
+}
+
+.business-card img{
+height:260px;
 }
 
 }
@@ -547,7 +549,6 @@ font-size:48px;
 </style>
 
 </head>
-
 <body>
 
 <header>
@@ -561,7 +562,7 @@ Margarita<span>WebDesign</span>
 </div>
 
 <a href="https://wa.me/5492235528850" class="nav-btn" target="_blank">
-Anotarme
+QUIERO PARTICIPAR
 </a>
 
 </nav>
@@ -585,21 +586,21 @@ Anotarme
 
 <h1>
 Mostrá tu <span>marca</span><br>
-de forma profesional
+al siguiente nivel
 </h1>
 
 <p>
-Una plataforma moderna creada para emprendedores, marcas y negocios que buscan más visibilidad, clientes y crecimiento online. No solo aparecerás dentro de la feria, también tendrás difusión en historias, reels, contenido estratégico y redes sociales 💛
+Una plataforma moderna pensada para emprendedores que quieren más visibilidad, clientes y presencia online. Además de aparecer dentro de la feria, tu marca también podrá tener difusión en historias, reels, contenido estratégico y publicaciones.
 </p>
 
 <div class="hero-buttons">
 
-<a href="https://wa.me/5492235528850" class="primary-btn" target="_blank">
-QUIERO MI ESPACIO
+<a href="#formulario" class="primary-btn">
+ANOTARME AHORA
 </a>
 
-<a href="#formulario" class="secondary-btn">
-ANOTARME
+<a href="https://wa.me/5492235528850" target="_blank" class="secondary-btn">
+HABLAR POR WHATSAPP
 </a>
 
 </div>
@@ -621,7 +622,7 @@ ANOTARME
 </h2>
 
 <p>
-Mucho más que aparecer en una web.
+Mucho más que aparecer dentro de una web.
 </p>
 
 </div>
@@ -655,7 +656,7 @@ Perfil Premium
 </h3>
 
 <p>
-Espacio personalizado con imagen, descripción, Instagram, WhatsApp y links directos.
+Espacio personalizado con imagen, descripción, Instagram y WhatsApp.
 </p>
 
 </div>
@@ -671,7 +672,7 @@ Más Visibilidad
 </h3>
 
 <p>
-Ayudamos a que nuevas personas descubran tu emprendimiento y conecten con tu marca.
+Ayudamos a que nuevas personas descubran y conecten con tu marca.
 </p>
 
 </div>
@@ -687,7 +688,7 @@ Comunidad
 </h3>
 
 <p>
-Una red creada para crecer entre emprendedores y generar conexiones reales.
+Un espacio creado para crecer entre emprendedores y potenciar marcas.
 </p>
 
 </div>
@@ -717,8 +718,8 @@ $12.000
 <span>/ mes</span>
 </div>
 
-<p style="color:#cfcfcf; line-height:1.8;">
-Valor exclusivo para los primeros emprendimientos. Luego el valor aumentará.
+<p style="color:#d0d0d0; line-height:1.8; max-width:700px; margin:auto;">
+Valor exclusivo para los primeros emprendimientos. Luego el precio aumentará.
 </p>
 
 <div class="features">
@@ -766,7 +767,7 @@ Emprendimientos destacados
 </h2>
 
 <p>
-Ejemplo de cómo se verán dentro de la feria ✨
+Así podrán verse las marcas dentro de la feria.
 </p>
 
 </div>
@@ -775,16 +776,16 @@ Ejemplo de cómo se verán dentro de la feria ✨
 
 <div class="business-card">
 
-<img src="almaenflor.jpg" alt="Alma en Flor Bienestar">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop" alt="Luna Atelier">
 
 <div class="business-content">
 
 <h3>
-Alma en Flor Bienestar
+Luna Atelier
 </h3>
 
 <p>
-Velas artesanales, aromaterapia y productos holísticos diseñados para conectar con tu bienestar ✨
+Accesorios, velas y objetos deco minimalistas creados artesanalmente ✨
 </p>
 
 <div class="links">
@@ -820,44 +821,36 @@ Quiero participar
 </h2>
 
 <p>
-Completá el formulario y recibiremos toda la información de tu emprendimiento 💛
+Completá el formulario y recibiré automáticamente toda la información de tu emprendimiento por mail.
 </p>
 
 </div>
 
+<div class="form-wrapper">
+
 <div class="form-box">
 
-<form
-action="https://formsubmit.co/mbtusq@gmail.com"
-method="POST"
-enctype="multipart/form-data"
->
+<form action="https://formsubmit.co/mbtusq@gmail.com" method="POST" enctype="multipart/form-data">
 
-<input
-type="text"
-name="Nombre"
-placeholder="Nombre y apellido"
-required
->
+<div class="form-grid">
 
-<input
-type="text"
-name="Marca"
-placeholder="Nombre de tu emprendimiento"
-required
->
+<div>
+<input type="text" name="Nombre" placeholder="Nombre y apellido" required>
+</div>
 
-<input
-type="text"
-name="Instagram"
-placeholder="Instagram"
->
+<div>
+<input type="text" name="Marca" placeholder="Nombre de tu emprendimiento" required>
+</div>
 
-<input
-type="text"
-name="WhatsApp"
-placeholder="WhatsApp"
->
+<div>
+<input type="text" name="Instagram" placeholder="Instagram">
+</div>
+
+<div>
+<input type="text" name="WhatsApp" placeholder="WhatsApp">
+</div>
+
+<div class="full">
 
 <select name="Categoria">
 
@@ -873,35 +866,47 @@ placeholder="WhatsApp"
 
 </select>
 
-<textarea
-name="Descripcion"
-placeholder="Contanos sobre tu emprendimiento ✨"
-></textarea>
+</div>
 
-<input
-type="file"
-name="Imagen"
-accept="image/*"
-required
->
+<div class="full">
 
-<input
-type="hidden"
-name="_captcha"
-value="false"
->
+<textarea name="Descripcion" placeholder="Contanos sobre tu emprendimiento ✨"></textarea>
 
-<input
-type="hidden"
-name="_subject"
-value="Nueva inscripción feria virtual"
->
+</div>
 
-<button type="submit">
+<div class="full">
+
+<div class="file-box">
+
+<input type="file" name="Imagen" accept="image/*" required>
+
+</div>
+
+</div>
+
+<div class="full">
+
+<button type="submit" class="submit-btn">
 ENVIAR INSCRIPCIÓN
 </button>
 
+</div>
+
+</div>
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_subject" value="Nueva inscripción feria virtual">
+
+<input type="hidden" name="_next" value="https://google.com">
+
 </form>
+
+<p class="note">
+IMPORTANTE: la primera vez que alguien envíe el formulario, FormSubmit te mandará un mail para activar la recepción automática. Tenés que confirmar ese correo una sola vez.
+</p>
+
+</div>
 
 </div>
 
