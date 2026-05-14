@@ -23,13 +23,12 @@ scroll-behavior:smooth;
 
 :root{
 
---bg:#fffaf8;
---white:#ffffff;
---text:#262626;
+--bg:#ffffff;
+--text:#111111;
 --light:#6f6f6f;
---primary:#dcb8b0;
---secondary:#f5e5e1;
---border:#eee5e2;
+--gold:#c6a76a;
+--soft:#f6f6f6;
+--border:#ececec;
 --shadow:0 10px 40px rgba(0,0,0,0.05);
 
 }
@@ -57,9 +56,9 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:24px 0;
+padding:22px 0;
 backdrop-filter:blur(14px);
-background:rgba(255,250,248,0.7);
+background:rgba(255,255,255,0.85);
 border-bottom:1px solid rgba(0,0,0,0.04);
 z-index:999;
 
@@ -82,7 +81,7 @@ letter-spacing:-1px;
 }
 
 .logo span{
-color:var(--primary);
+color:var(--gold);
 }
 
 .nav-btn{
@@ -98,7 +97,7 @@ transition:.3s;
 }
 
 .nav-btn:hover{
-transform:translateY(-2px);
+transform:translateY(-3px);
 }
 
 .hero{
@@ -118,9 +117,9 @@ position:absolute;
 width:350px;
 height:350px;
 border-radius:50%;
-background:var(--secondary);
+background:#f7f1e7;
 filter:blur(100px);
-opacity:.8;
+opacity:.9;
 z-index:-1;
 
 }
@@ -160,16 +159,16 @@ margin-bottom:30px;
 
 .hero h1{
 
-font-size:86px;
+font-size:88px;
 line-height:0.95;
 letter-spacing:-5px;
-margin-bottom:30px;
+margin-bottom:28px;
 font-weight:800;
 
 }
 
 .hero h1 span{
-color:var(--primary);
+color:var(--gold);
 }
 
 .hero p{
@@ -177,7 +176,7 @@ color:var(--primary);
 font-size:21px;
 line-height:1.8;
 color:var(--light);
-max-width:800px;
+max-width:820px;
 margin:auto;
 margin-bottom:45px;
 
@@ -196,7 +195,7 @@ flex-wrap:wrap;
 
 background:var(--text);
 color:white;
-padding:18px 32px;
+padding:18px 34px;
 border-radius:18px;
 font-weight:600;
 transition:.3s;
@@ -211,7 +210,7 @@ transform:translateY(-4px);
 
 background:white;
 border:1px solid var(--border);
-padding:18px 32px;
+padding:18px 34px;
 border-radius:18px;
 font-weight:600;
 color:var(--text);
@@ -276,7 +275,7 @@ margin-bottom:20px;
 
 .card h3{
 
-font-size:25px;
+font-size:24px;
 margin-bottom:14px;
 
 }
@@ -290,21 +289,21 @@ color:var(--light);
 
 .price-box{
 
-background:white;
+background:#111111;
 padding:70px 40px;
 border-radius:40px;
 text-align:center;
-border:1px solid var(--border);
-box-shadow:var(--shadow);
+color:white;
 
 }
 
 .price{
 
-font-size:86px;
+font-size:88px;
 font-weight:800;
 letter-spacing:-4px;
 margin:20px 0;
+color:var(--gold);
 
 }
 
@@ -312,7 +311,7 @@ margin:20px 0;
 
 font-size:24px;
 font-weight:500;
-color:var(--light);
+color:#cfcfcf;
 
 }
 
@@ -327,7 +326,7 @@ margin-top:45px;
 
 .feature{
 
-background:var(--bg);
+background:rgba(255,255,255,0.06);
 padding:18px;
 border-radius:18px;
 font-weight:500;
@@ -337,15 +336,15 @@ font-weight:500;
 .business-grid{
 
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:26px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:28px;
 
 }
 
 .business-card{
 
 background:white;
-border-radius:28px;
+border-radius:30px;
 overflow:hidden;
 border:1px solid var(--border);
 box-shadow:var(--shadow);
@@ -360,29 +359,29 @@ transform:translateY(-8px);
 .business-card img{
 
 width:100%;
-height:260px;
+height:320px;
 object-fit:cover;
 
 }
 
 .business-content{
 
-padding:28px;
+padding:30px;
 
 }
 
 .business-content h3{
 
-font-size:24px;
+font-size:26px;
 margin-bottom:12px;
 
 }
 
 .business-content p{
 
-color:var(--light);
 line-height:1.8;
-margin-bottom:22px;
+color:var(--light);
+margin-bottom:24px;
 
 }
 
@@ -396,7 +395,7 @@ flex-wrap:wrap;
 
 .links a{
 
-background:var(--secondary);
+background:#f7f7f7;
 padding:12px 16px;
 border-radius:14px;
 font-size:14px;
@@ -432,7 +431,7 @@ width:100%;
 padding:18px;
 border-radius:18px;
 border:1px solid var(--border);
-background:var(--bg);
+background:#fafafa;
 font-family:'Inter',sans-serif;
 font-size:15px;
 outline:none;
@@ -459,10 +458,11 @@ font-size:16px;
 
 .cta{
 
-background:linear-gradient(135deg,#ead0ca,#f7ece8);
+background:linear-gradient(135deg,#111111,#1c1c1c);
 padding:90px 40px;
 border-radius:45px;
 text-align:center;
+color:white;
 
 }
 
@@ -480,9 +480,9 @@ margin-bottom:24px;
 max-width:760px;
 margin:auto;
 line-height:1.9;
-color:#5f5f5f;
 font-size:18px;
 margin-bottom:38px;
+color:#cfcfcf;
 
 }
 
@@ -498,7 +498,7 @@ color:#888;
 @media(max-width:900px){
 
 .hero h1{
-font-size:56px;
+font-size:58px;
 }
 
 .section-title h2{
@@ -589,7 +589,7 @@ de forma profesional
 </h1>
 
 <p>
-Una plataforma moderna creada para emprendedores, marcas y negocios que buscan más visibilidad, clientes y crecimiento online. No solo aparecerás dentro de la feria, también tendrás difusión constante en redes sociales, historias, reels y contenido estratégico 💛
+Una plataforma moderna creada para emprendedores, marcas y negocios que buscan más visibilidad, clientes y crecimiento online. No solo aparecerás dentro de la feria, también tendrás difusión en historias, reels, contenido estratégico y redes sociales 💛
 </p>
 
 <div class="hero-buttons">
@@ -639,7 +639,7 @@ Difusión
 </h3>
 
 <p>
-Tu emprendimiento podrá ser difundido en historias, reels, publicaciones y contenido estratégico.
+Tu emprendimiento podrá aparecer en historias, reels, publicaciones y contenido estratégico.
 </p>
 
 </div>
@@ -651,7 +651,7 @@ Tu emprendimiento podrá ser difundido en historias, reels, publicaciones y cont
 </div>
 
 <h3>
-Perfil Profesional
+Perfil Premium
 </h3>
 
 <p>
@@ -671,7 +671,7 @@ Más Visibilidad
 </h3>
 
 <p>
-Ayudamos a que nuevas personas descubran tu marca y conecten con tus productos o servicios.
+Ayudamos a que nuevas personas descubran tu emprendimiento y conecten con tu marca.
 </p>
 
 </div>
@@ -717,7 +717,7 @@ $12.000
 <span>/ mes</span>
 </div>
 
-<p style="color:#777; line-height:1.8;">
+<p style="color:#cfcfcf; line-height:1.8;">
 Valor exclusivo para los primeros emprendimientos. Luego el valor aumentará.
 </p>
 
@@ -775,76 +775,16 @@ Ejemplo de cómo se verán dentro de la feria ✨
 
 <div class="business-card">
 
-<img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop" alt="Marca">
+<img src="almaenflor.jpg" alt="Alma en Flor Bienestar">
 
 <div class="business-content">
 
 <h3>
-Alma en Flor
+Alma en Flor Bienestar
 </h3>
 
 <p>
-Velas artesanales, aromaterapia y productos holísticos ✨
-</p>
-
-<div class="links">
-
-<a href="#">
-Instagram
-</a>
-
-<a href="#">
-WhatsApp
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="business-card">
-
-<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop" alt="Marca">
-
-<div class="business-content">
-
-<h3>
-Luna Shop
-</h3>
-
-<p>
-Indumentaria femenina y accesorios modernos 🛍️
-</p>
-
-<div class="links">
-
-<a href="#">
-Instagram
-</a>
-
-<a href="#">
-WhatsApp
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="business-card">
-
-<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="Marca">
-
-<div class="business-content">
-
-<h3>
-Mora Studio
-</h3>
-
-<p>
-Contenido visual, branding y fotografía para marcas 📸
+Velas artesanales, aromaterapia y productos holísticos diseñados para conectar con tu bienestar ✨
 </p>
 
 <div class="links">
@@ -887,17 +827,37 @@ Completá el formulario y recibiremos toda la información de tu emprendimiento 
 
 <div class="form-box">
 
-<!-- FORMULARIO -->
+<form
+action="https://formsubmit.co/mbtusq@gmail.com"
+method="POST"
+enctype="multipart/form-data"
+>
 
-<form action="https://formsubmit.co/TUEMAIL@gmail.com" method="POST">
+<input
+type="text"
+name="Nombre"
+placeholder="Nombre y apellido"
+required
+>
 
-<input type="text" name="Nombre" placeholder="Nombre y apellido" required>
+<input
+type="text"
+name="Marca"
+placeholder="Nombre de tu emprendimiento"
+required
+>
 
-<input type="text" name="Marca" placeholder="Nombre de tu emprendimiento" required>
+<input
+type="text"
+name="Instagram"
+placeholder="Instagram"
+>
 
-<input type="text" name="Instagram" placeholder="Instagram">
-
-<input type="text" name="WhatsApp" placeholder="WhatsApp">
+<input
+type="text"
+name="WhatsApp"
+placeholder="WhatsApp"
+>
 
 <select name="Categoria">
 
@@ -913,15 +873,33 @@ Completá el formulario y recibiremos toda la información de tu emprendimiento 
 
 </select>
 
-<textarea name="Descripcion" placeholder="Contanos sobre tu emprendimiento ✨"></textarea>
+<textarea
+name="Descripcion"
+placeholder="Contanos sobre tu emprendimiento ✨"
+></textarea>
 
-<input type="text" name="Imagen" placeholder="Link de imagen o logo">
+<input
+type="file"
+name="Imagen"
+accept="image/*"
+required
+>
+
+<input
+type="hidden"
+name="_captcha"
+value="false"
+>
+
+<input
+type="hidden"
+name="_subject"
+value="Nueva inscripción feria virtual"
+>
 
 <button type="submit">
 ENVIAR INSCRIPCIÓN
 </button>
-
-<input type="hidden" name="_captcha" value="false">
 
 </form>
 
@@ -961,4 +939,4 @@ HABLAR POR WHATSAPP
 </footer>
 
 </body>
-  </html>
+</html>
