@@ -1,147 +1,421 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Feria Virtual | Margarita Web Design</title>
+<title>Feria Virtual Premium | Margarita Web Design</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+--gold:#d4af37;
+--black:#0f0f0f;
+--white:#ffffff;
+--soft:#f6f4ef;
+--gray:#777;
+}
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-}
-
-html{
 scroll-behavior:smooth;
 }
 
 body{
-font-family:'Inter',sans-serif;
-background:#fffaf8;
-color:#1e1e1e;
+font-family:'Montserrat',sans-serif;
+background:var(--soft);
 overflow-x:hidden;
+color:var(--black);
 }
 
-:root{
---primary:#dcb8b0;
---secondary:#f5e5e1;
---text:#1f1f1f;
---light:#6f6f6f;
---white:#ffffff;
---border:#f0e3df;
---shadow:0 15px 40px rgba(0,0,0,0.06);
+/* SCROLL */
+
+::-webkit-scrollbar{
+width:8px;
 }
 
-a{
-text-decoration:none;
+::-webkit-scrollbar-thumb{
+background:var(--gold);
+border-radius:20px;
 }
 
-.container{
-width:92%;
-max-width:1280px;
-margin:auto;
-}
-
-/* HEADER */
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-z-index:999;
-backdrop-filter:blur(14px);
-background:rgba(255,250,248,0.75);
-border-bottom:1px solid rgba(0,0,0,0.04);
-}
+/* NAVBAR */
 
 nav{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 8%;
 display:flex;
-align-items:center;
 justify-content:space-between;
-padding:20px 0;
+align-items:center;
+background:rgba(0,0,0,.3);
+backdrop-filter:blur(15px);
+z-index:999;
 }
 
 .logo{
-font-size:22px;
-font-weight:800;
-letter-spacing:-1px;
-}
-
-.logo span{
-color:var(--primary);
-}
-
-.nav-btn{
-background:linear-gradient(135deg,#1f1f1f,#373737);
-color:white;
-padding:15px 24px;
-border-radius:18px;
-font-weight:600;
+color:#fff;
 font-size:14px;
-transition:0.35s;
-box-shadow:var(--shadow);
+font-weight:700;
+letter-spacing:3px;
 }
 
-.nav-btn:hover{
-transform:translateY(-3px) scale(1.02);
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+font-size:13px;
+font-weight:500;
+transition:.4s;
+}
+
+nav a:hover{
+color:var(--gold);
 }
 
 /* HERO */
 
 .hero{
-min-height:100vh;
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
+url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1974&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
-padding:160px 0 100px;
+padding:20px;
 position:relative;
+overflow:hidden;
 }
 
-.blur{
+.hero::before{
+content:'';
 position:absolute;
-width:400px;
-height:400px;
-background:var(--secondary);
-filter:blur(100px);
-border-radius:50%;
-z-index:-1;
-opacity:0.8;
-animation:float 7s ease-in-out infinite;
-}
-
-.blur.one{
-top:-120px;
-left:-120px;
-}
-
-.blur.two{
-bottom:-120px;
-right:-120px;
-}
-
-@keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(20px);}
-100%{transform:translateY(0px);}
+width:600px;
+height:600px;
+background:radial-gradient(circle,var(--gold),transparent 70%);
+opacity:.12;
+top:-150px;
+right:-150px;
 }
 
 .hero-content{
-max-width:980px;
+max-width:950px;
+position:relative;
+z-index:2;
 animation:fadeUp 1s ease;
 }
 
+.hero h1{
+font-size:120px;
+font-family:'Cormorant Garamond',serif;
+line-height:.9;
+color:#fff;
+font-weight:600;
+}
+
+.hero h1 span{
+color:var(--gold);
+}
+
+.hero p{
+margin-top:30px;
+font-size:20px;
+line-height:1.9;
+color:#eee;
+}
+
+.hero-buttons{
+margin-top:45px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 35px;
+border-radius:60px;
+text-decoration:none;
+font-size:14px;
+font-weight:600;
+transition:.4s;
+letter-spacing:1px;
+}
+
+.btn-gold{
+background:var(--gold);
+color:#000;
+}
+
+.btn-gold:hover{
+transform:translateY(-5px);
+box-shadow:0 20px 40px rgba(212,175,55,.3);
+}
+
+.btn-outline{
+border:1px solid rgba(255,255,255,.4);
+color:#fff;
+}
+
+.btn-outline:hover{
+background:#fff;
+color:#000;
+}
+
+/* SECTION */
+
+section{
+padding:100px 8%;
+}
+
+.title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.title h2{
+font-size:70px;
+font-family:'Cormorant Garamond',serif;
+font-weight:600;
+}
+
+.title p{
+margin-top:15px;
+line-height:1.8;
+color:var(--gray);
+}
+
+/* FILTERS */
+
+.filters{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:60px;
+}
+
+.filter-btn{
+padding:14px 28px;
+border:none;
+border-radius:60px;
+background:#fff;
+font-weight:600;
+cursor:pointer;
+transition:.4s;
+font-size:14px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.filter-btn.active{
+background:var(--gold);
+}
+
+.filter-btn:hover{
+transform:translateY(-3px);
+}
+
+/* GRID */
+
+.market-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+}
+
+/* CARD */
+
+.card{
+background:#fff;
+border-radius:35px;
+overflow:hidden;
+transition:.5s;
+box-shadow:0 15px 40px rgba(0,0,0,.06);
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.card-content{
+padding:30px;
+}
+
+.tag{
+background:var(--gold);
+padding:8px 16px;
+border-radius:40px;
+display:inline-block;
+font-size:12px;
+font-weight:700;
+margin-bottom:18px;
+}
+
+.card-content h3{
+font-size:36px;
+font-family:'Cormorant Garamond',serif;
+margin-bottom:10px;
+}
+
+.card-content p{
+font-size:14px;
+line-height:1.9;
+color:var(--gray);
+margin-bottom:25px;
+}
+
+.buttons{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.buttons a{
+padding:12px 20px;
+border-radius:50px;
+text-decoration:none;
+font-size:13px;
+font-weight:600;
+transition:.4s;
+}
+
+.buttons a:first-child{
+background:#000;
+color:#fff;
+}
+
+.buttons a:last-child{
+background:var(--gold);
+color:#000;
+}
+
+/* JOIN */
+
+.join{
+margin-top:100px;
+background:#000;
+border-radius:45px;
+padding:80px 50px;
+text-align:center;
+color:#fff;
+position:relative;
+overflow:hidden;
+}
+
+.join::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,var(--gold),transparent 70%);
+opacity:.12;
+top:-150px;
+right:-150px;
+}
+
+.join h2{
+font-size:75px;
+font-family:'Cormorant Garamond',serif;
+position:relative;
+z-index:2;
+}
+
+.price{
+font-size:70px;
+font-family:'Cormorant Garamond',serif;
+color:var(--gold);
+margin:20px 0;
+position:relative;
+z-index:2;
+}
+
+.join p{
+max-width:700px;
+margin:auto;
+line-height:2;
+color:#ddd;
+position:relative;
+z-index:2;
+}
+
+.join ul{
+list-style:none;
+margin-top:30px;
+position:relative;
+z-index:2;
+}
+
+.join li{
+margin-bottom:14px;
+line-height:1.8;
+}
+
+/* FOOTER */
+
+footer{
+background:#000;
+padding:80px 8%;
+text-align:center;
+color:#fff;
+margin-top:100px;
+}
+
+footer h2{
+font-size:55px;
+font-family:'Cormorant Garamond',serif;
+margin-bottom:15px;
+}
+
+footer p{
+line-height:2;
+color:#ccc;
+max-width:700px;
+margin:auto;
+}
+
+.footer-links{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.footer-links a{
+text-decoration:none;
+color:var(--gold);
+font-weight:600;
+}
+
+/* ANIMATION */
+
 @keyframes fadeUp{
+
 from{
 opacity:0;
 transform:translateY(40px);
@@ -151,307 +425,11 @@ to{
 opacity:1;
 transform:translateY(0);
 }
+
 }
 
-.badge{
-display:inline-flex;
-align-items:center;
-gap:10px;
-padding:13px 22px;
-background:white;
-border:1px solid var(--border);
-border-radius:100px;
-font-size:14px;
-font-weight:600;
-box-shadow:var(--shadow);
-margin-bottom:32px;
-}
-
-.hero h1{
-font-size:92px;
-line-height:0.93;
-letter-spacing:-5px;
-font-weight:800;
-margin-bottom:28px;
-}
-
-.hero h1 span{
-color:var(--primary);
-}
-
-.hero p{
-font-size:21px;
-line-height:1.9;
-max-width:800px;
-margin:auto;
-color:var(--light);
-margin-bottom:42px;
-}
-
-.hero-buttons{
-display:flex;
-justify-content:center;
-gap:18px;
-flex-wrap:wrap;
-}
-
-.primary-btn,
-.secondary-btn{
-padding:18px 30px;
-border-radius:20px;
-font-weight:600;
-font-size:15px;
-transition:0.35s;
-}
-
-.primary-btn{
-background:linear-gradient(135deg,#1f1f1f,#343434);
-color:white;
-box-shadow:var(--shadow);
-}
-
-.secondary-btn{
-background:white;
-color:var(--text);
-border:1px solid var(--border);
-}
-
-.primary-btn:hover,
-.secondary-btn:hover{
-transform:translateY(-4px);
-}
-
-/* SECTION */
-
-section{
-padding:120px 0;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:70px;
-}
-
-.section-title h2{
-font-size:58px;
-letter-spacing:-3px;
-margin-bottom:16px;
-}
-
-.section-title p{
-font-size:18px;
-line-height:1.8;
-color:var(--light);
-max-width:720px;
-margin:auto;
-}
-
-/* FEATURES */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:24px;
-}
-
-.card{
-background:white;
-padding:36px;
-border-radius:32px;
-border:1px solid var(--border);
-box-shadow:var(--shadow);
-transition:0.4s;
-position:relative;
-overflow:hidden;
-}
-
-.card::before{
-content:'';
-position:absolute;
-width:120px;
-height:120px;
-background:var(--secondary);
-border-radius:50%;
-right:-40px;
-top:-40px;
-opacity:0.4;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card-icon{
-font-size:40px;
-margin-bottom:18px;
-}
-
-.card h3{
-font-size:24px;
-margin-bottom:12px;
-}
-
-.card p{
-color:var(--light);
-line-height:1.8;
-}
-
-/* PRICE */
-
-.price-box{
-background:linear-gradient(135deg,#f5e5e1,#fff);
-padding:80px 40px;
-border-radius:42px;
-text-align:center;
-box-shadow:var(--shadow);
-}
-
-.price-box h2{
-font-size:48px;
-letter-spacing:-2px;
-}
-
-.price{
-font-size:92px;
-font-weight:800;
-letter-spacing:-5px;
-margin:22px 0;
-color:#1f1f1f;
-}
-
-.price span{
-font-size:24px;
-font-weight:500;
-color:var(--light);
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:16px;
-margin-top:40px;
-}
-
-.feature{
-background:white;
-padding:18px;
-border-radius:18px;
-font-weight:600;
-}
-
-/* SHOWCASE */
-
-.business-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-gap:28px;
-}
-
-.business-card{
-background:white;
-border-radius:34px;
-overflow:hidden;
-box-shadow:var(--shadow);
-transition:0.4s;
-position:relative;
-}
-
-.business-card:hover{
-transform:translateY(-10px);
-}
-
-.business-card img{
-width:100%;
-height:380px;
-object-fit:cover;
-transition:0.4s;
-}
-
-.business-card:hover img{
-transform:scale(1.05);
-}
-
-.business-content{
-padding:30px;
-}
-
-.business-content h3{
-font-size:28px;
-margin-bottom:12px;
-}
-
-.business-content p{
-color:var(--light);
-line-height:1.8;
-margin-bottom:24px;
-}
-
-.links{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-}
-
-.links a{
-background:var(--secondary);
-padding:12px 18px;
-border-radius:14px;
-font-size:14px;
-font-weight:600;
-color:var(--text);
-transition:0.3s;
-}
-
-.links a:hover{
-transform:translateY(-2px);
-}
-
-/* CTA */
-
-.cta{
-background:linear-gradient(135deg,#1f1f1f,#353535);
-padding:90px 40px;
-border-radius:44px;
-text-align:center;
-color:white;
-position:relative;
-overflow:hidden;
-}
-
-.cta::before{
-content:'';
-position:absolute;
-width:300px;
-height:300px;
-background:rgba(255,255,255,0.05);
-right:-80px;
-top:-80px;
-border-radius:50%;
-}
-
-.cta h2{
-font-size:62px;
-line-height:1;
-letter-spacing:-3px;
-margin-bottom:24px;
-position:relative;
-}
-
-.cta p{
-max-width:760px;
-margin:auto;
-line-height:1.9;
-font-size:18px;
-color:#d7d7d7;
-margin-bottom:38px;
-position:relative;
-}
-
-footer{
-padding:40px 20px;
-text-align:center;
-font-size:14px;
-color:#888;
+.hidden{
+display:none;
 }
 
 /* MOBILE */
@@ -459,62 +437,58 @@ color:#888;
 @media(max-width:900px){
 
 .hero h1{
-font-size:62px;
-letter-spacing:-3px;
+font-size:70px;
 }
 
-.section-title h2,
-.cta h2{
-font-size:44px;
+.title h2{
+font-size:45px;
+}
+
+.join h2{
+font-size:50px;
 }
 
 .price{
-font-size:64px;
+font-size:50px;
+}
+
+nav ul{
+display:none;
 }
 
 }
 
 @media(max-width:600px){
 
-nav{
-flex-direction:column;
-gap:16px;
-}
-
 .hero{
-padding-top:190px;
+height:auto;
+padding-top:140px;
+padding-bottom:120px;
 }
 
 .hero h1{
-font-size:46px;
-line-height:1;
+font-size:52px;
 }
 
 .hero p{
-font-size:17px;
+font-size:15px;
 }
 
-.hero-buttons{
-flex-direction:column;
+.title h2{
+font-size:38px;
 }
 
-.primary-btn,
-.secondary-btn{
-width:100%;
-text-align:center;
+.filter-btn{
+font-size:12px;
+padding:12px 18px;
 }
 
-.section-title h2,
-.cta h2{
-font-size:34px;
+.card-content h3{
+font-size:30px;
 }
 
-.price{
-font-size:48px;
-}
-
-.business-card img{
-height:280px;
+.join{
+padding:60px 25px;
 }
 
 }
@@ -522,59 +496,48 @@ height:280px;
 </style>
 
 </head>
+
 <body>
 
-<header>
-<div class="container">
+<!-- NAV -->
 
 <nav>
 
 <div class="logo">
-Margarita<span>WebDesign</span>
+MARGARITA WEB DESIGN
 </div>
 
-<a href="https://wa.me/5492235528850" class="nav-btn" target="_blank">
-QUIERO PARTICIPAR
-</a>
+<ul>
+<li><a href="#">Inicio</a></li>
+<li><a href="#market">Categorías</a></li>
+<li><a href="#join">Sumate</a></li>
+</ul>
 
 </nav>
 
-</div>
-</header>
+<!-- HERO -->
 
 <section class="hero">
 
-<div class="blur one"></div>
-<div class="blur two"></div>
-
-<div class="container">
-
 <div class="hero-content">
 
-<div class="badge">
-✨ Feria Virtual Premium para Emprendedores
-</div>
-
 <h1>
-Convertí tu <span>marca</span><br>
-en una experiencia
+FERIA <span>VIRTUAL</span>
 </h1>
 
 <p>
-Una plataforma premium creada para emprendedores que quieren destacar de verdad. Tu negocio podrá tener presencia dentro de la feria, difusión estratégica, visibilidad en redes sociales y una estética moderna pensada para transmitir valor.
+Descubrí emprendimientos, marcas, negocios y servicios en una experiencia digital premium ✨
 </p>
 
 <div class="hero-buttons">
 
-<a href="https://wa.me/5492235528850" class="primary-btn" target="_blank">
-QUIERO MI ESPACIO
+<a href="#market" class="btn btn-gold">
+EXPLORAR
 </a>
 
-<a href="#emprendimientos" class="secondary-btn">
-VER EMPRENDIMIENTOS
+<a href="https://wa.me/5492235528850" class="btn btn-outline">
+SUMAR MI MARCA
 </a>
-
-</div>
 
 </div>
 
@@ -582,198 +545,493 @@ VER EMPRENDIMIENTOS
 
 </section>
 
-<section>
-<div class="container">
+<!-- MARKET -->
 
-<div class="section-title">
+<section id="market">
+
+<div class="title">
+
+<h2>Explorá Categorías</h2>
+
+<p>
+Encontrá emprendimientos increíbles por rubro ✨
+</p>
+
+</div>
+
+<!-- FILTERS -->
+
+<div class="filters">
+
+<button class="filter-btn active" data-filter="all">
+Todos
+</button>
+
+<button class="filter-btn" data-filter="moda">
+Indumentaria
+</button>
+
+<button class="filter-btn" data-filter="belleza">
+Belleza
+</button>
+
+<button class="filter-btn" data-filter="gastronomia">
+Gastronomía
+</button>
+
+<button class="filter-btn" data-filter="hogar">
+Hogar & Deco
+</button>
+
+<button class="filter-btn" data-filter="servicios">
+Servicios
+</button>
+
+<button class="filter-btn" data-filter="salud">
+Salud
+</button>
+
+<button class="filter-btn" data-filter="mascotas">
+Mascotas
+</button>
+
+<button class="filter-btn" data-filter="tecnologia">
+Tecnología
+</button>
+
+<button class="filter-btn" data-filter="fotografia">
+Fotografía
+</button>
+
+</div>
+
+<!-- GRID -->
+
+<div class="market-grid">
+
+<!-- MODA -->
+
+<div class="card moda">
+
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1974&auto=format&fit=crop">
+
+<div class="card-content">
+
+<div class="tag">
+Indumentaria
+</div>
+
+<h3>Velvet Studio</h3>
+
+<p>
+Moda femenina moderna y minimalista ✨
+</p>
+
+<div class="buttons">
+
+<a href="#">
+WhatsApp
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BELLEZA -->
+
+<div class="card belleza">
+
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1887&auto=format&fit=crop">
+
+<div class="card-content">
+
+<div class="tag">
+Belleza
+</div>
+
+<h3>Golden Beauty</h3>
+
+<p>
+Skincare, maquillaje y estética premium 💄
+</p>
+
+<div class="buttons">
+
+<a href="#">
+WhatsApp
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- GASTRONOMÍA -->
+
+<div class="card gastronomia">
+
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop">
+
+<div class="card-content">
+
+<div class="tag">
+Gastronomía
+</div>
+
+<h3>Maison Coffee</h3>
+
+<p>
+Cafetería artesanal y experiencias gastronómicas ☕
+</p>
+
+<div class="buttons">
+
+<a href="#">
+WhatsApp
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- HOGAR -->
+
+<div class="card hogar">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1974&auto=format&fit=crop">
+
+<div class="card-content">
+
+<div class="tag">
+Hogar & Deco
+</div>
+
+<h3>Maison Deco</h3>
+
+<p>
+Decoración minimalista y diseño interior ✨
+</p>
+
+<div class="buttons">
+
+<a href="#">
+WhatsApp
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SERVICIOS -->
+
+<div class="card servicios">
+
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop">
+
+<div class="card-content">
+
+<div class="tag">
+Servicios
+</div>
+
+<h3>Margarita Studio</h3>
+
+<p>
+Diseño web, branding y gestión de redes 🚀
+</p>
+
+<div class="buttons">
+
+<a href="#">
+WhatsApp
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SALUD -->
+
+<div class="card salud">
+
+<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1974&auto=format&fit=crop">
+
+<div class="card-content">
+
+<div class="tag">
+Salud
+</div>
+
+<h3>Medical Care</h3>
+
+<p>
+Profesionales de salud y bienestar integral 🩺
+</p>
+
+<div class="buttons">
+
+<a href="#">
+WhatsApp
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MASCOTAS -->
+
+<div class="card mascotas">
+
+<img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1887&auto=format&fit=crop">
+
+<div class="card-content">
+
+<div class="tag">
+Mascotas
+</div>
+
+<h3>Pet House</h3>
+
+<p>
+Accesorios y productos para mascotas 🐶
+</p>
+
+<div class="buttons">
+
+<a href="#">
+WhatsApp
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TECNOLOGÍA -->
+
+<div class="card tecnologia">
+
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1974&auto=format&fit=crop">
+
+<div class="card-content">
+
+<div class="tag">
+Tecnología
+</div>
+
+<h3>Tech Vision</h3>
+
+<p>
+Soluciones digitales y tecnología moderna 💻
+</p>
+
+<div class="buttons">
+
+<a href="#">
+WhatsApp
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FOTOGRAFÍA -->
+
+<div class="card fotografia">
+
+<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1887&auto=format&fit=crop">
+
+<div class="card-content">
+
+<div class="tag">
+Fotografía
+</div>
+
+<h3>Studio Light</h3>
+
+<p>
+Fotografía profesional y contenido visual 📸
+</p>
+
+<div class="buttons">
+
+<a href="#">
+WhatsApp
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- JOIN -->
+
+<div class="join" id="join">
+
 <h2>
-¿Qué incluye?
-</h2>
-
-<p>
-Mucho más que aparecer dentro de una página web.
-</p>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<div class="card-icon">📱</div>
-<h3>Difusión</h3>
-<p>
-Historias, reels, publicaciones y contenido pensado para generar alcance.
-</p>
-</div>
-
-<div class="card">
-<div class="card-icon">🛍️</div>
-<h3>Perfil Premium</h3>
-<p>
-Espacio moderno con imagen, descripción y acceso directo a redes sociales.
-</p>
-</div>
-
-<div class="card">
-<div class="card-icon">🚀</div>
-<h3>Más Visibilidad</h3>
-<p>
-Tu marca podrá llegar a nuevas personas y potenciales clientes.
-</p>
-</div>
-
-<div class="card">
-<div class="card-icon">💛</div>
-<h3>Comunidad</h3>
-<p>
-Una feria diseñada para conectar emprendedores y potenciar negocios.
-</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<div class="price-box">
-
-<div class="badge">
-🔥 Precio lanzamiento
-</div>
-
-<h2>
-Inscripción mensual
+Sumá Tu Marca
 </h2>
 
 <div class="price">
-$12.000
-<span>/ mensual</span>
+12 USD
 </div>
 
-<div class="features">
+<p>
+o $12.000 ARS ✨
+<br><br>
 
-<div class="feature">✔ Espacio premium</div>
-<div class="feature">✔ Difusión en historias</div>
-<div class="feature">✔ Acceso directo a WhatsApp</div>
-<div class="feature">✔ Presencia en redes</div>
-<div class="feature">✔ Diseño moderno</div>
-<div class="feature">✔ Contenido visual</div>
+✔ Espacio premium dentro de la feria  
+✔ Difusión en historias y redes  
+✔ Más visibilidad y alcance  
+✔ Link directo a Instagram y WhatsApp  
+✔ Comunidad emprendedora  
+✔ Visualizaciones GRATIS para un reel 🚀
+
+</p>
+
+<ul>
+
+<li>📩 Enviame nombre del emprendimiento</li>
+<li>📩 Instagram y WhatsApp</li>
+<li>📩 Logo o fotos</li>
+<li>📩 Descripción breve</li>
+<li>📩 Comprobante de pago</li>
+
+</ul>
+
+<br><br>
+
+<a href="https://wa.me/5492235528850" class="btn btn-gold">
+QUIERO PARTICIPAR
+</a>
 
 </div>
 
-</div>
-
-</div>
 </section>
 
-<section id="emprendimientos">
-<div class="container">
-
-<div class="section-title">
-<h2>
-Emprendimientos destacados
-</h2>
-
-<p>
-Así podrán verse dentro de la feria virtual.
-</p>
-</div>
-
-<div class="business-grid">
-
-<div class="business-card">
-
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop" alt="Luna Atelier">
-
-<div class="business-content">
-
-<h3>
-Luna Atelier
-</h3>
-
-<p>
-Accesorios, velas y objetos deco minimalistas creados artesanalmente ✨
-</p>
-
-<div class="links">
-
-<a href="#">
-Instagram
-</a>
-
-<a href="#">
-WhatsApp
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="business-card">
-
-<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200&auto=format&fit=crop" alt="Mora Studio">
-
-<div class="business-content">
-
-<h3>
-Mora Studio
-</h3>
-
-<p>
-Contenido visual, branding y fotografía para marcas modernas 📸
-</p>
-
-<div class="links">
-
-<a href="#">
-Instagram
-</a>
-
-<a href="#">
-WhatsApp
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<div class="cta">
-
-<h2>
-Tu marca merece<br>
-verse premium ✨
-</h2>
-
-<p>
-La feria virtual está pensada para emprendedores que quieren diferenciarse, crecer y mostrar su marca de forma profesional.
-</p>
-
-<a href="https://wa.me/5492235528850" class="primary-btn" target="_blank">
-HABLAR POR WHATSAPP
-</a>
-
-</div>
-
-</div>
-</section>
+<!-- FOOTER -->
 
 <footer>
-© 2026 Margarita Web Design — Feria Virtual Premium
+
+<h2>
+Margarita Web Design
+</h2>
+
+<p>
+Una plataforma premium creada para ayudar a crecer marcas, emprendimientos y negocios con diseño, difusión y presencia online ✨
+</p>
+
+<div class="footer-links">
+
+<a href="https://instagram.com/margaritawebdesign">
+Instagram
+</a>
+
+<a href="https://wa.me/5492235528850">
+WhatsApp
+</a>
+
+</div>
+
 </footer>
+
+<!-- SCRIPT -->
+
+<script>
+
+const buttons = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.card');
+
+buttons.forEach(button=>{
+
+button.addEventListener('click',()=>{
+
+buttons.forEach(btn=>{
+btn.classList.remove('active');
+});
+
+button.classList.add('active');
+
+const filter = button.dataset.filter;
+
+cards.forEach(card=>{
+
+if(filter === 'all'){
+card.classList.remove('hidden');
+}
+
+else{
+
+if(card.classList.contains(filter)){
+card.classList.remove('hidden');
+}
+
+else{
+card.classList.add('hidden');
+}
+
+}
+
+});
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
